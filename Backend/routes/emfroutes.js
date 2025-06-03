@@ -5,4 +5,4 @@ router.post('/calculate-emf', (req, res) => {
     // same handler logic here
 });
 
-module.exports = router;
+module.exports = router;E

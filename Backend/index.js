@@ -11,7 +11,7 @@ app.post('/calculate-emf', (req, res) => {
     if (
         typeof charge !== 'number' ||
         typeof velocity !== 'number' ||
-        typeof magneticField !== 'number ||'
+        typeof magneticField !== 'number'
     ) {
         return res.status(400).json({ error: 'Invalid input'});
     }
