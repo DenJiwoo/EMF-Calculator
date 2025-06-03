@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 function ForceInput({ onCalculate }) {
   const [q, setQ] = useState("");
   const [v, setV] = useState("");
@@ -11,7 +12,7 @@ function ForceInput({ onCalculate }) {
     const qNum = parseFloat(q);
     const vNum = parseFloat(v);
     const BNum = parseFloat(B);
-    const phiNum = (parseFloat(phi) * Math.PI) / 180;
+    const phiNum = (parseFloat(phi) * Math.PI) / 180; // degrees to radians
 
     if ([qNum, vNum, BNum, phiNum].some(isNaN)) {
       alert("Please enter valid numbers in all fields");
@@ -25,9 +26,9 @@ function ForceInput({ onCalculate }) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-row">
-        <label htmlFor="charge">Charge (q):</label>
+        <label htmlFor="q">Charge (q):</label>
         <input
-          id="charge"
+          id="q"
           type="number"
           step="any"
           value={q}
@@ -36,9 +37,9 @@ function ForceInput({ onCalculate }) {
         />
       </div>
       <div className="form-row">
-        <label htmlFor="velocity">Velocity (v):</label>
+        <label htmlFor="v">Velocity (v):</label>
         <input
-          id="velocity"
+          id="v"
           type="number"
           step="any"
           value={v}
@@ -47,9 +48,9 @@ function ForceInput({ onCalculate }) {
         />
       </div>
       <div className="form-row">
-        <label htmlFor="magnetic">Magnetic Field (B):</label>
+        <label htmlFor="B">Magnetic Field (B):</label>
         <input
-          id="magnetic"
+          id="B"
           type="number"
           step="any"
           value={B}
@@ -58,9 +59,9 @@ function ForceInput({ onCalculate }) {
         />
       </div>
       <div className="form-row">
-        <label htmlFor="angle">Angle (ϕ degrees):</label>
+        <label htmlFor="phi">Angle (ϕ degrees):</label>
         <input
-          id="angle"
+          id="phi"
           type="number"
           step="any"
           value={phi}
@@ -81,7 +82,7 @@ function ForceResult({ force }) {
   return (
     <div className="force-result-container">
       <h3>Calculation Result</h3>
-      <pre className="preformatted">{formatScientific(force)} N</pre>
+      <pre>{formatScientific(force)} N</pre>
     </div>
   );
 }
@@ -107,6 +108,103 @@ function HistoryList({ history }) {
   );
 }
 
+function AIChat() {
+  const [prompt, setPrompt] = useState("");
+  const [response, setResponse] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (!prompt.trim()) return;
+
+    setLoading(true);
+    setResponse("");
+
+    try {
+      const res = await fetch("http://localhost:8000/api/ask-ai/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Server error: ${res.status}`);
+      }
+
+      const data = await res.json();
+      setResponse(data.response);
+    } catch (error) {
+      setResponse("Error: " + error.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div
+      className="ai-chat-container"
+      style={{ display: "flex", flexDirection: "column", height: "100%" }}
+    >
+      <h2>Ask the AI</h2>
+      <form onSubmit={handleSubmit} style={{ flexShrink: 0 }}>
+        <textarea
+          placeholder="Type your physics problem here..."
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          rows={6}
+          style={{
+            width: "100%",
+            padding: "0.75rem",
+            fontSize: "1.125rem",
+            borderRadius: "0.375rem",
+            border: "1px solid #D4C9BE",
+            resize: "vertical",
+            color: "#123458",
+            boxSizing: "border-box",
+            fontFamily: "inherit",
+            backgroundColor: "#F1EFEC",
+          }}
+        />
+        <button
+          type="submit"
+          disabled={loading}
+          style={{
+            marginTop: "1rem",
+            backgroundColor: "#123458",
+            color: "#F1EFEC",
+            fontWeight: "700",
+            fontSize: "1.125rem",
+            border: "none",
+            borderRadius: "0.375rem",
+            cursor: loading ? "not-allowed" : "pointer",
+            padding: "0.6rem 1.2rem",
+          }}
+        >
+          {loading ? "Thinking..." : "Submit"}
+        </button>
+      </form>
+      {response && (
+        <pre
+          style={{
+            marginTop: "1.5rem",
+            backgroundColor: "#F1EFEC",
+            border: "1px solid #D4C9BE",
+            borderRadius: "0.5rem",
+            padding: "1rem",
+            color: "#123458",
+            whiteSpace: "pre-wrap",
+            flexGrow: 1,
+            overflowY: "auto",
+            fontSize: "1.125rem",
+            fontFamily: "monospace",
+          }}
+        >
+          {response}
+        </pre>
+      )}
+    </div>
+  );
+}
 export default function App() {
   const [force, setForce] = useState(null);
   const [history, setHistory] = useState([]);
@@ -117,24 +215,19 @@ export default function App() {
   }
 
   return (
-    <div className="app-container">
-      <div className="left-container">
-        <h1>⚡ EM Force Calculator</h1>
+    <div className="app-container" style={{ display: "flex" }}>
+      <div className="left-container" style={{ flex: 1, padding: "2rem" }}>
+        <h1 style={{ color: "#123458" }}>⚡ EM Force Calculator</h1>
         <p className="subtitle">
-          Compute electromagnetic force using scalar inputs (F = |q| vB sin(ϕ))
+          Compute electromagnetic force using scalar inputs (F = |q|·v·B·sin(ϕ))
         </p>
         <ForceInput onCalculate={handleCalculate} />
         {force !== null && <ForceResult force={force} />}
         <HistoryList history={history} />
       </div>
-
-      <div className="right-container">
-        <h2>AI Integration</h2>
-        <p>Placeholder for Gemini AI interface and word problem solver.</p>
-        {/* Your AI components/UI go here */}
+      <div className="right-container" style={{ flex: 1, padding: "2rem", borderLeft: "1px solid #D4C9BE" }}>
+        <AIChat />
       </div>
     </div>
   );
 }
-
-

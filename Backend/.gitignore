@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "physics-emf-calculator",
+  "private_key_id": "8c707199b5c8bebc0485440bc22f1d52e6b62c85",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC0XXj+be+8P+qM\n+Nvj39TeWQ/UTGSaUSIN+AZuUbFp/udOVqwNOmYJmRaHxmGUKMtLZ/5IcRPwF/pS\nhCLvxthDi6YPa1amm89RiaJRuWKho4+UptvtbiYpYo4yyPZGm2dW3p6X/fRGUbuO\n6iljnRn7DMVAj3ue49jU+j3V2ZcyRTCdNUwv55LVeEnm+UmFhjU0BPxdutdBzScn\nsMSFKaEpXMt++AfnkH9SmOdukdflp+82agQUP8HwC9hJad9dkDUwxSjRObTGrW7o\nbqbysIsWOkW10tdzQCvxM6Z9OlYWcEdnnFoZ3eNJMSI03oJq8+Y8b95EtISw0Zcy\n1ZIjvRXNAgMBAAECggEAI2v3Cuq+ygb4cqKeFqjbBqbRjcVJ/aeA62LiKnDHSbSK\nqy8o33kwWGK1EsmyWLVRRZghD4uLmZuv6Nwz+0ifKNbIcF9Jd3OCmfYQh4HDvdBg\nLpa9eunmuzp0iENA4Jl9CEm0tk9k1ZmQHu9cXQiZtVzq8TSsl8YSC7OwiKrQv4mU\nLFEZGH1c8qcA/vXxigx8enewlBsCm7uMEcPUbjOSdyyQkCfOKZqTBo4oeKu5+MhE\ncmwS4bdnXcwxUn0FT2pkente5wEy8vN1AzKo/v5exhNW2AgPy000v4qD8geY7bGs\nu5I7CsfvpqQQiDqvj5qOip9XL7tue4l0I9I7TEXe6QKBgQDZKmYlegtJgCM80U7o\ninUGciqY1GsV6V51G8hRtk2yEE05q2rr7iTaN2GG4BSYbDmu5xKhrLCjfGOqY18M\n8LE74bau1/UFFIeFCxVY8L0PdSihxCUS61w+HZyFuhozUCO0QA2MsQygLDc/Y8Ba\n+EmFR9afEX+vIjLsWSblvyoR2QKBgQDUnmNMkcLHWLRdxjsWxqqPMK1aEVuYdOMT\ngGk7k+PXiIEVHH7i84iF0lcn7tkCBhkujJ9JMCeTGl1EFlu9Hot8yNx+utszRo3/\nuw4RE4qjGNwJzbq4N3R20Hy6qma9zUiQPuUCNRa6w+oBXLY7kiYvvm9zo4NlSxMM\n8VBzqpQ3FQKBgH04CnAfoDSAc1EVK5fAhlvyJoe7LAgVaUbDf01GfiRna/AN3Hgv\n+AXvmwenW5jMBrLIQKECr1OFXP6Zj+wpOTjbHHhSw9BrFv1q96MyJQGtv4EPVYVE\nOwsCDge52HOwCPZdXLK8QBh3hl/Bx99sfRAh7SoJcANvB8fqXBhrkvl5AoGAXirw\nS99a5zOQXuAHF6VRsS2b+YIqkTFjySVcdjif9rvMf+8o+5dk5fAtDdCpaE4PJSC/\nA4lCXdKVcCx+4RoAKXpEvhRANUuQZK0SI9oF0wqVmfn2MtTMzjq0o3AJJRMgilJw\n1zNwJ7PRllzbkTK/mvG7JvpKnbhMbbULLs9j6akCgYADd4mvOsgnkX+iCkbLjchZ\n2MhrhcaqnrNnySgB5pCtXq604IXi2X48mlpdAr6shLw8SaUj+pwxyHf43qaDxhow\n/FOqGoGXEkK0nu/Ei4Yjq+W9blmvrwJUW8NGiaoIFZvFBwI/gySYn6oyPY3143e6\nphXVo2BvyjTlA8H8x5yg5w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "danfred@physics-emf-calculator.iam.gserviceaccount.com",
+  "client_id": "104116324515427792456",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/danfred%40physics-emf-calculator.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
