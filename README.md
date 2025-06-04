@@ -12,6 +12,32 @@ Currently, two official plugins are available:
 
 This is an ElectroMagnetic Force Calculator that utilizes Gemini AI for word problem solving.
 
+electromagnetic-force-calculator/
+├── Backend/
+│   ├── __pycache__/
+│   ├── main.cpython-312.pyc
+│   ├── .venv/               # Virtual environment directory
+│   │   ├── Include/
+│   │   ├── Lib/
+│   │   ├── Scripts/
+│   │   ├── share/
+│   │   └── pyvenv.cfg
+│   └── app/
+│       ├── __pycache__/
+│       ├── api/
+│       │   └── __pycache__/
+│       ├── calculate.py     # Calculation-related functions
+│       ├── gemini_ai.py     # AI-related functionality
+│       └── __init__.py      # App initialization
+│   ├── core/
+│   │   ├── config.py        # Configuration settings
+│   │   └── __init__.py      # Core package initialization
+│   ├── .env                 # Environment variables
+│   ├── .gitignore           # Git ignore rules
+│   ├── __init__.py          # Root package initialization
+│   ├── main.py              # Main application entry point
+│   └── requirements.txt     # Python dependencies
+|
 Frontend - Project Structure
 ├── public/                  # Static files (e.g., favicon, robots.txt)
 │   └── ...
@@ -45,29 +71,3 @@ Frontend - Project Structure
 ├── tailwind.config.js       # If using Tailwind CSS
 ├── vite.config.js
 └── README.md
-
-electromagnetic-force-calculator/
-├── Backend - Project structure
-│   ├── __pycache__/
-│   ├── main.cpython-312.pyc
-│   ├── .venv/               # Virtual environment directory
-│   │   ├── Include/
-│   │   ├── Lib/
-│   │   ├── Scripts/
-│   │   ├── share/
-│   │   └── pyvenv.cfg
-│   └── app/
-│       ├── __pycache__/
-│       ├── api/
-│       │   └── __pycache__/
-│       ├── calculate.py     # Calculation-related functions
-│       ├── gemini_ai.py     # AI-related functionality
-│       └── __init__.py      # App initialization
-│   ├── core/
-│   │   ├── config.py        # Configuration settings
-│   │   └── __init__.py      # Core package initialization
-│   ├── .env                 # Environment variables
-│   ├── .gitignore           # Git ignore rules
-│   ├── __init__.py          # Root package initialization
-│   ├── main.py              # Main application entry point
-│   └── requirements.txt     # Python dependencies
