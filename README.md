@@ -22,25 +22,25 @@ FrontEnd supposed project structure electromagnetic-force-calculator/
 │   │   ├── CalculatorInput.jsx
 │   │   ├── CalculatorOutput.jsx
 │   │   └── CustomButton.jsx
-│
+│   |
 │   ├── features/               # Feature-specific folders (modular architecture)
 │   │   └── calculator/         # EMF calculator logic and views
 │   │       ├── CalculatorPage.jsx
 │   │       ├── calculatorUtils.js
 │   │       └── calculatorSlice.js (if using Redux or Zustand for state)
-│
+│   |  
 │   ├── hooks/                  # Custom React hooks
 │   │   └── useEMFCalculator.js
-│
+│   |
 │   ├── pages/                  # Top-level pages for routing (if more than one)
 │   │   └── Home.jsx
-│
+│   |
 │   ├── styles/                 # Global or modular CSS/SCSS files
 │   │   └── globals.css
-│
+│   |
 │   ├── utils/                  # General utility functions (non-React-specific)
 │   │   └── formulas.js         # EMF formulas and constants
-│
+│   |
 │   ├── App.jsx                 # Main App component
 │   ├── main.jsx                # Vite entry point
 │   └── routes.jsx             # (Optional) Centralized route definitions
@@ -52,3 +52,33 @@ FrontEnd supposed project structure electromagnetic-force-calculator/
 ├── tailwind.config.js        # If using Tailwind CSS
 ├── vite.config.js
 └── README.md
+
+project_root/
+│
+├── Backend/
+│   ├── __pycache__/
+│   ├── main.cpython-312.pyc
+│   ├── .venv/                  # Virtual environment directory
+│   │   ├── Include/
+│   │   ├── Lib/
+│   │   ├── Scripts/
+│   │   ├── share/
+│   │   └── pyvenv.cfg
+│   │
+│   └── app/
+│       ├── __pycache__/
+│       ├── api/
+│       │   └── __pycache__/
+│       ├── calculate.py        # Calculation-related functions
+│       ├── gemini_ai.py        # AI-related functionality
+│       └── __init__.py         # App initialization
+│
+├── core/
+│   ├── config.py               # Configuration settings
+│   └── __init__.py             # Core package initialization
+│
+├── .env                        # Environment variables
+├── .gitignore                  # Git ignore rules
+├── __init__.py                 # Root package initialization
+├── main.py                     # Main application entry point
+└── requirements.txt            # Python dependencies
