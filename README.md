@@ -10,10 +10,9 @@ Currently, two official plugins are available:
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This is an ElectroMagnetic Force Calculator that utilizes Gemini AI for word problem solving.
 
-
-electromagnetic-force-calculator/
+FrontEnd supposed project structure electromagnetic-force-calculator/
 ├── public/                     # Static files (e.g., favicon, robots.txt)
 │   └── ...
 ├── src/                        # Main source folder
