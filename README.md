@@ -12,7 +12,11 @@ Currently, two official plugins are available:
 
 This is an ElectroMagnetic Force Calculator that utilizes Gemini AI for word problem solving.
 
-electromagnetic-force-calculator/
+# Project Structure
+
+## Backend
+```
+Electromagnetic-force-calculator/
 ├── Backend/
 │   ├── __pycache__/
 │   ├── main.cpython-312.pyc
@@ -23,12 +27,12 @@ electromagnetic-force-calculator/
 │   │   ├── share/
 │   │   └── pyvenv.cfg
 │   └── app/
-│       ├── __pycache__/
-│       ├── api/
-│       │   └── __pycache__/
-│       ├── calculate.py     # Calculation-related functions
-│       ├── gemini_ai.py     # AI-related functionality
-│       └── __init__.py      # App initialization
+│   |   ├── __pycache__/
+│   |   ├── api/
+│   |   │   └── __pycache__/
+│   |   ├── calculate.py     # Calculation-related functions
+│   |   ├── gemini_ai.py     # AI-related functionality
+│   |   └── __init__.py      # App initialization
 │   ├── core/
 │   │   ├── config.py        # Configuration settings
 │   │   └── __init__.py      # Core package initialization
@@ -37,8 +41,11 @@ electromagnetic-force-calculator/
 │   ├── __init__.py          # Root package initialization
 │   ├── main.py              # Main application entry point
 │   └── requirements.txt     # Python dependencies
-|
-Frontend - Project Structure
+```
+
+## Frontend
+```
+electromagnetic-force-calculator/
 ├── public/                  # Static files (e.g., favicon, robots.txt)
 │   └── ...
 ├── src/                     # Main source folder
@@ -71,3 +78,4 @@ Frontend - Project Structure
 ├── tailwind.config.js       # If using Tailwind CSS
 ├── vite.config.js
 └── README.md
+```
