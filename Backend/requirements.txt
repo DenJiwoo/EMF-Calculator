@@ -4,3 +4,4 @@ python-dotenv
 httpx
 sympy
 google-generativeai
+google-genai

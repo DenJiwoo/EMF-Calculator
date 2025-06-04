@@ -1,7 +1,10 @@
-function AIChat() {
+import React, { useState } from "react";
+
+export default function AIChat() {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isHover, setIsHover] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -35,10 +38,10 @@ function AIChat() {
       className="ai-chat-container"
       style={{ display: "flex", flexDirection: "column", height: "100%" }}
     >
-      <h2>Ask the AI</h2>
+      <h1>🤖 Buzz the Bot!</h1>
       <form onSubmit={handleSubmit} style={{ flexShrink: 0 }}>
         <textarea
-          placeholder="Type your physics problem here..."
+          placeholder="Prompt thee your electrifying question!"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           rows={6}
@@ -58,9 +61,11 @@ function AIChat() {
         <button
           type="submit"
           disabled={loading}
+          onMouseEnter={() => !loading && setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
           style={{
             marginTop: "1rem",
-            backgroundColor: "#123458",
+            backgroundColor: isHover ? "#123458" : "#4A5C8A", 
             color: "#F1EFEC",
             fontWeight: "700",
             fontSize: "1.125rem",
@@ -68,6 +73,7 @@ function AIChat() {
             borderRadius: "0.375rem",
             cursor: loading ? "not-allowed" : "pointer",
             padding: "0.6rem 1.2rem",
+            transition: "background-color 0.3s ease",
           }}
         >
           {loading ? "Thinking..." : "Submit"}

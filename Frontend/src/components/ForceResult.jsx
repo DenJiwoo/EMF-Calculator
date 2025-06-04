@@ -1,20 +1,39 @@
-function ForceResult({ force }) {
-  function formatScientific(num) {
-    return num.toExponential(4).replace(/e([+-])/i, 'e $1 ');
-  }
+import React from "react";
 
+function formatExponential(num) {
+  if (num === 0) return "0";
+
+  const superscriptMap = {
+    "0": "⁰",
+    "1": "¹",
+    "2": "²",
+    "3": "³",
+    "4": "⁴",
+    "5": "⁵",
+    "6": "⁶",
+    "7": "⁷",
+    "8": "⁸",
+    "9": "⁹",
+    "-": "⁻",
+  };
+
+  const sci = num.toExponential(3);
+  const [mantissa, exp] = sci.split("e");
+  const exponent = exp.replace("+", "");
+
+  const superscriptExp = exponent
+    .split("")
+    .map((char) => superscriptMap[char] || char)
+    .join("");
+
+  return `${mantissa} × 10${superscriptExp}`;
+}
+
+export default function ForceResult({ force }) {
   return (
-    <div className="bg-white border border-green-300 rounded-md p-6 shadow-sm mt-6">
-      <h3 className="text-lg font-semibold text-green-900 mb-2">Calculation Result</h3>
-      {force !== null ? (
-        <pre className="bg-gray-100 text-gray-900 p-4 rounded-md font-mono text-xl">
-          {formatScientific(force)} N
-        </pre>
-      ) : (
-        <p className="text-gray-500">No result yet. Enter values and click "Calculate".</p>
-      )}
+    <div className="force-result-container">
+      <h3>Calculation Result</h3>
+      <pre>{formatExponential(force)} N</pre>
     </div>
   );
 }
-
-export default ForceResult;

@@ -4,6 +4,12 @@
   margin-bottom: 1rem;
 }
 
+.right-container h1 {
+  text-align: center;
+  font-size: 2.5rem; /* bigger heading */
+  margin-bottom: 1rem;
+}
+
 h2 {
   font-size: 1.5rem;
 }
@@ -68,7 +74,7 @@ h2 {
 }
 
 button {
-  background-color: #123458;
+  background-color: #4A5C8A; 
   color: #F1EFEC;
   border: none;
   border-radius: 0.375rem;
@@ -77,10 +83,12 @@ button {
   padding: 0.6rem 1.2rem;
   font-weight: 700;
   align-self: flex-start;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-  background-color: #030303;
+  background-color: #123458;
+  color: #F1EFEC;
 }
 
 .force-result-container,
@@ -101,4 +109,26 @@ h1, h2, h3 {
 .subtitle {
   color: #123458;
   margin-bottom: 1.5rem;
+}
+
+.submit-button {
+  margin-top: 1rem;
+  background-color: #4A5C8A; 
+  color: #F1EFEC;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #123458;
+}
+
+.submit-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
