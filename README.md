@@ -12,7 +12,7 @@ Currently, two official plugins are available:
 
 This is an ElectroMagnetic Force Calculator that utilizes Gemini AI for word problem solving.
 
-FrontEnd supposed project structure electromagnetic-force-calculator/
+FrontEnd - project structure electromagnetic-force-calculator/
 ├── public/                     # Static files (e.g., favicon, robots.txt)
 │   └── ...
 ├── src/                        # Main source folder
@@ -53,7 +53,7 @@ FrontEnd supposed project structure electromagnetic-force-calculator/
 ├── vite.config.js
 └── README.md
 
-project_root/
+Backend - project structure electromagnetic-force-calculator/
 │
 ├── Backend/
 │   ├── __pycache__/
