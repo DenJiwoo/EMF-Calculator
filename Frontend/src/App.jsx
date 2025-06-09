@@ -52,9 +52,9 @@ export default function App() {
 
       <div className="app-container" style={{ display: "flex" }}>
         <div className="left-container" style={{ flex: 1, padding: "2rem" }}>
-          <h1 style={{ color: "#123458" }}>⚡ EM Force Calculator</h1>
+          <h1 style={{ color: "#123458" }}>⚡ Lorentz' Force Calculator</h1>
           <p className="subtitle">
-            Compute electromagnetic force using scalar inputs (F = |q|·v·B·sin(ϕ))
+            Compute Lorentz' electromagnetic force using scalar inputs (F = |q|·v·B·sin(ϕ))
           </p>
           <ForceInput onCalculate={handleCalculate} />
           {force !== null && <ForceResult force={force} />}
