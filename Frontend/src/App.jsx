@@ -56,6 +56,7 @@ export default function App() {
           <p className="subtitle">
             Compute Lorentz' electromagnetic force using scalar inputs (F = |q|·v·B·sin(ϕ))
           </p>
+          <p>Note: you must input scientific notations for Charge(q) and Velocity(v).</p>
           <ForceInput onCalculate={handleCalculate} />
           {force !== null && <ForceResult force={force} />}
           <HistoryList history={history} />

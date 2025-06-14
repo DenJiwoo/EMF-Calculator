@@ -6,9 +6,9 @@ export default function LandingPage({ onStart }) {
 
   return (
     <div style={{ padding: "4rem", textAlign: "center" }}>
-      <h1 style={{ fontSize: "3rem", color: "#123458" }}>⚡ Lorentz' ElectroMagnetic Force Calculator</h1>
+      <h1 style={{ fontSize: "3rem", color: "#123458" }}>⚡ Lorentz' Force Calculator</h1>
       <p style={{ fontSize: "1.25rem", marginTop: "1.5rem", color: "#030303" }}>
-        Understand Lorentz' electromagnetic force using real physics formulas and AI-powered help.
+        Understand Lorentz' Force using real physics formulas and AI-powered help.
       </p>
 
       <EMField3D />
